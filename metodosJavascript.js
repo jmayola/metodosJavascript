@@ -184,4 +184,37 @@ console.log(getPermissions(passwd,"mayola"))
 console.log(getPermissions(passwd,"peña"))
 console.log(getPermissions(passwd,"diego"))
 
-// metodo 14
+// metodo 14, flatmap
+//
+// funcion para obtener todas las etiquetas de las peliculas de un catalogo
+let peliculas = [
+  { titulo: 'Cien años de soledad', etiquetas: ['ficción', 'mágico', 'latinoamérica'] },
+  { titulo: 'El señor de los anillos', etiquetas: ['ficción', 'épico', 'fantasía'] },
+  { titulo: '1984', etiquetas: ['ficción', 'distopía', 'política'] }
+]
+function getTags(movies){
+  return etiquetas = movies.flatMap((item) => item.etiquetas);
+}
+
+console.log(getTags(peliculas));
+
+// metodo 15, indexof
+//
+// funcion para obtener el id del empleado con el salario mas alto
+let withSalary = empleados.map((item,i)=>empleados[i]["salary"] = Math.floor(Math.random()*10000))
+function getRicherSalary(employees){
+    let richer = 0
+    employees.forEach((item)=>item > richer ? richer = item : richer)
+    return empleados[employees.indexOf(richer)]
+}
+console.log(getRicherSalary(withSalary))
+
+// metodo 16 findIndex
+//
+// funcion para encontrar a algun empleado disponible
+let dispEmployees = empleados.map((item,i)=>Math.floor(Math.random()*2) == 1 ? empleados[i]["enable"] = true : empleados[i]["enable"] = false)
+console.log(empleados)
+function getAvalible(employees){
+  return empleados[employees.findIndex(item => item)]
+}
+console.log("empleado disponible: " + getAvalible(dispEmployees)["nombre"])
